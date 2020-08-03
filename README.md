@@ -5,3 +5,7 @@
 ## install
 
 ## start:
+### `yarn start`
+
+### `yarn build`
+### `yarn test`
