@@ -3,35 +3,35 @@ import { Card, Button } from "@joaowillamy-test-quero/core";
 
 import { Divided } from "../Divided";
 import { Text } from "../Text";
-import * as S from "./FavoriteCurse.styled";
+import * as S from "./FavoriteCourse.styled";
 
-const FavoriteCurse = ({ favoriteCurse }) => {
+const FavoriteCourse = ({ favoriteCourse }) => {
   return (
     <Card>
       <img
-        src={favoriteCurse.university.logo_url}
-        alt={favoriteCurse.university.name}
+        src={favoriteCourse.university.logo_url}
+        alt={favoriteCourse.university.name}
       />
 
       <S.Row>
-        <Text bold>{favoriteCurse.university.name}</Text>
+        <Text bold>{favoriteCourse.university.name}</Text>
         <Text color={"bluePrimary"} bold>
-          {favoriteCurse.course.name}
+          {favoriteCourse.course.name}
         </Text>
-        <Text bold>{favoriteCurse.university.score}</Text>
+        <Text bold>{favoriteCourse.university.score}</Text>
       </S.Row>
 
       <Divided />
 
       <S.Row>
         <Text bold>
-          {favoriteCurse.course.kind}
+          {favoriteCourse.course.kind}
           {" • "}
-          {favoriteCurse.course.shift}
+          {favoriteCourse.course.shift}
         </Text>
 
         <Text size={"12px"}>
-          Início das aulas em: {favoriteCurse.start_date}
+          Início das aulas em: {favoriteCourse.start_date}
         </Text>
       </S.Row>
 
@@ -42,11 +42,11 @@ const FavoriteCurse = ({ favoriteCurse }) => {
           Mensalidade com o Quero Bolsa:
         </Text>
         <Text size={"13px"} cut>
-          {favoriteCurse.full_price}
+          {favoriteCourse.full_price}
         </Text>
         <span style={{ display: "inline", width: "100%" }}>
           <Text color={"green"} size={"18px"} bold inline>
-            {favoriteCurse.price_with_discount}
+            {favoriteCourse.price_with_discount}
           </Text>
           <Text inline> /mês</Text>
         </span>
@@ -60,4 +60,4 @@ const FavoriteCurse = ({ favoriteCurse }) => {
   );
 };
 
-export default FavoriteCurse;
+export default FavoriteCourse;
