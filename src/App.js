@@ -1,10 +1,9 @@
 import React from "react";
-import { Header, Footer } from "@joaowillamy-test-quero/core";
+import { Header, Breadcrumb, Footer } from "@joaowillamy-test-quero/core";
 import { ThemeProvider } from "@joaowillamy-test-quero/theme";
 
 import { dbjson } from "./db";
-import FavoriteCourse from "./components/FavoriteCourse/FavoriteCourse";
-import AddCourse from "./components/AddCourse/AddCourse";
+import { AddCourse, FavoriteCourse } from "./components";
 
 import * as S from "./App.styled";
 
@@ -15,13 +14,16 @@ const App = () => {
         srcLogo={`${process.env.PUBLIC_URL}/images/logo-querobolsa.svg`}
       />
       <S.CostumMenu />
-
       <S.Container>
+        <Breadcrumb />
+      </S.Container>
+
+      <S.ContainerList>
         <AddCourse />
         {dbjson.map((favoriteCourse, index) => (
           <FavoriteCourse key={index} favoriteCourse={favoriteCourse} />
         ))}
-      </S.Container>
+      </S.ContainerList>
 
       <Footer />
     </ThemeProvider>

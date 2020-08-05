@@ -10,9 +10,14 @@ export const CostumMenu = styled(Menu)`
 
 export const Container = styled.div`
   width: 95%;
-  margin: 50px auto;
+  margin: 20px auto;
+`;
+
+export const ContainerList = styled.div`
+  width: 95%;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto 20px auto;
 
   ${media.lessThan("medium")`
     justify-content: center;

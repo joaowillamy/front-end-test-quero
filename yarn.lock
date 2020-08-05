@@ -1321,10 +1321,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@joaowillamy-test-quero/core@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@joaowillamy-test-quero/core/-/core-1.1.2.tgz#b5f437e49a4c862c0314c152f5f08449f152162a"
-  integrity sha512-L2bzFZYuwR9Z769RT9CoHCquMrE/DCXhn+1uYJip61iizOxz0RhDtDe/ksnpk3jlITH3LohoIuhU0hWitz1okw==
+"@joaowillamy-test-quero/core@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@joaowillamy-test-quero/core/-/core-1.1.3.tgz#c41dde40ea9c0b6c456f1ae5b53d248a0482a573"
+  integrity sha512-r4jKIclsJsoAnFj+SFSIlRTWS54r50eOvzAxlcD/3rAXA8vyxT7bF9ZEXJXER2V5oCKC4fhPm40vPLx11UaCjw==
   dependencies:
     prop-types "15.7.2"
     react "16.12.0"
