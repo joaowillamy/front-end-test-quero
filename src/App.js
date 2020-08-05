@@ -3,8 +3,8 @@ import { Header, Footer } from "@joaowillamy-test-quero/core";
 import { ThemeProvider } from "@joaowillamy-test-quero/theme";
 
 import { dbjson } from "./db";
-import FavoriteCurse from "./components/FavoriteCurse/FavoriteCurse";
-import AddCurse from "./components/AddCurse/AddCurse";
+import FavoriteCourse from "./components/FavoriteCourse/FavoriteCourse";
+import AddCourse from "./components/AddCourse/AddCourse";
 
 import * as S from "./App.styled";
 
@@ -17,9 +17,9 @@ const App = () => {
       <S.CostumMenu />
 
       <S.Container>
-        <AddCurse />
-        {dbjson.map((favoriteCurse, index) => (
-          <FavoriteCurse key={index} favoriteCurse={favoriteCurse} />
+        <AddCourse />
+        {dbjson.map((favoriteCourse, index) => (
+          <FavoriteCourse key={index} favoriteCourse={favoriteCourse} />
         ))}
       </S.Container>
 

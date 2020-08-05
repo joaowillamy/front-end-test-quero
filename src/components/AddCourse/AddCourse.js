@@ -3,9 +3,9 @@ import { Card, Icon } from "@joaowillamy-test-quero/core";
 
 import { Text } from "../Text";
 
-import * as S from "./AddCurse.styled";
+import * as S from "./AddCourse.styled";
 
-const AddCurse = () => {
+const AddCourse = () => {
   return (
     <Card>
       <S.Row>
@@ -23,4 +23,4 @@ const AddCurse = () => {
   );
 };
 
-export default AddCurse;
+export default AddCourse;
