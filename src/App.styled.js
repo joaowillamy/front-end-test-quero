@@ -1,11 +1,25 @@
 import styled from "styled-components";
-import { Menu } from "@joaowillamy-test-quero/core";
+import { Menu, ButtonGroup } from "@joaowillamy-test-quero/core";
 import media from "styled-media-query";
 
 export const CostumMenu = styled(Menu)`
   svg {
     width: ${({ theme }) => theme.iconSizes.lg};
   }
+`;
+
+export const CostumButtonGroup = styled(ButtonGroup)`
+  margin: 20px auto;
+
+  ${media.lessThan("medium")`
+    button {
+      width: 94%;
+    }
+  `};
+
+  ${media.greaterThan("medium")`
+    float: right;
+  `}
 `;
 
 export const Container = styled.div`
