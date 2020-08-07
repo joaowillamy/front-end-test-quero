@@ -5,9 +5,9 @@ import { Text } from "../Text";
 
 import * as S from "./AddCourse.styled";
 
-const AddCourse = () => {
+const AddCourse = (props) => {
   return (
-    <Card>
+    <Card {...props}>
       <S.Row>
         <Icon.AddCircleOutline />
         <br />

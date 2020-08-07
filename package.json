@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@joaowillamy-test-quero/core": "^1.2.0",
+    "@joaowillamy-test-quero/core": "^1.3.0",
     "@joaowillamy-test-quero/form": "^1.0.12",
     "@joaowillamy-test-quero/theme": "^1.0.12",
     "@testing-library/jest-dom": "^4.2.4",
