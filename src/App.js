@@ -1,5 +1,10 @@
-import React from "react";
-import { Header, Breadcrumb, Footer } from "@joaowillamy-test-quero/core";
+import React, { useState } from "react";
+import {
+  Header,
+  Breadcrumb,
+  Footer,
+  Modal,
+} from "@joaowillamy-test-quero/core";
 import { ThemeProvider } from "@joaowillamy-test-quero/theme";
 
 import { dbjson } from "./db";
@@ -8,6 +13,9 @@ import { AddCourse, FavoriteCourse, Text } from "./components";
 import * as S from "./App.styled";
 
 const App = () => {
+  const [showModal, setShowModal] = useState(false);
+  const toggleModal = () => setShowModal(!showModal);
+
   return (
     <ThemeProvider>
       <Header
@@ -38,13 +46,18 @@ const App = () => {
       </S.Container>
 
       <S.ContainerList>
-        <AddCourse />
+        <AddCourse onClick={toggleModal} />
+
         {dbjson.map((favoriteCourse, index) => (
           <FavoriteCourse key={index} favoriteCourse={favoriteCourse} />
         ))}
       </S.ContainerList>
 
       <Footer />
+
+      <Modal isOpen={showModal} toggleModal={toggleModal}>
+        oi
+      </Modal>
     </ThemeProvider>
   );
 };
