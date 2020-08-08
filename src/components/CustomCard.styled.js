@@ -7,20 +7,18 @@ export const CustomCard = styled(Card)`
   padding-top: 2%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({ center }) => (center ? "center" : "space-between")};
   flex-direction: column;
   margin: 10px 0;
   min-height: 300px;
 
   ${media.greaterThan("medium")`
-  
-  width: 30%;
-  
-  margin-bottom: 2%;
-  margin-left: 2%;
-`};
+    width: 30%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+  `};
 
   ${media.greaterThan("large")`
-  width: 22.5%;
-`}
+    width: 22.5%;
+  `}
 `;

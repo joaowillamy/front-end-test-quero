@@ -7,7 +7,7 @@ import * as S from "./AddCourse.styled";
 
 const AddCourse = (props) => {
   return (
-    <CustomCard {...props}>
+    <CustomCard {...props} center>
       <S.Row>
         <Icon.AddCircleOutline />
         <br />

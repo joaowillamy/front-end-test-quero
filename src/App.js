@@ -2,7 +2,7 @@ import React from "react";
 import { Header, Footer } from "@joaowillamy-test-quero/core";
 import { ThemeProvider } from "@joaowillamy-test-quero/theme";
 
-import Home from "./pages/Home";
+import { Home } from "./pages";
 
 import * as S from "./App.styled";
 
