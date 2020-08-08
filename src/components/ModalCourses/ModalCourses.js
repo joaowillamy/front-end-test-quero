@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Select, Checkbox, Range } from "@joaowillamy-test-quero/form";
 
 import { Text, SortCourse } from "..";
-import { dbjson } from "../../services/db";
 
+import { getCities, getCourses } from "../../services/keeperDB";
+import { useFilter } from "../../hooks/useFilter";
 import * as S from "./ModalCourses.styled";
 
 const ModalCourses = ({ showModal, toggleModal }) => {
+  const {
+    setInputCity,
+    setInputCourse,
+    setInputIsPresential,
+    setInputIsDistance,
+    setInputAmount,
+    setInputSort,
+    clearAll,
+    listCourse,
+  } = useFilter();
+
+  useEffect(() => {
+    if (!showModal) clearAll();
+  }, [showModal]);
+
   return (
     <>
       <S.CustomModal isOpen={showModal} toggleModal={toggleModal}>
@@ -22,19 +38,10 @@ const ModalCourses = ({ showModal, toggleModal }) => {
             SELECIONE SUA CIDADE
           </Text>
           <Select
-            labelField={"name"}
-            valueField={"id"}
-            options={[
-              {
-                id: "ea304469-3d25-4b33-967b-9740ab7e910f",
-                name: "Madge Casper",
-              },
-              {
-                id: "ea30446asd9-3d25-4b33-967b-9740ab7e910f",
-                name: "Joao",
-              },
-            ]}
-            onChange={(values) => console.log(values)}
+            labelField={"label"}
+            valueField={"value"}
+            options={getCities()}
+            onChange={(value) => setInputCity(value[0].value)}
           />
         </S.ModalCol>
         <S.ModalCol>
@@ -42,19 +49,10 @@ const ModalCourses = ({ showModal, toggleModal }) => {
             SELECIONE O CURSO DE SUA PREFERÊNCIA
           </Text>
           <Select
-            labelField={"name"}
-            valueField={"id"}
-            options={[
-              {
-                id: "ea304469-3d25-4b33-967b-9740ab7e910f",
-                name: "Madge Casper",
-              },
-              {
-                id: "ea30446asd9-3d25-4b33-967b-9740ab7e910f",
-                name: "Joao",
-              },
-            ]}
-            onChange={(values) => console.log(values)}
+            labelField={"label"}
+            valueField={"value"}
+            options={getCourses()}
+            onChange={(value) => setInputCourse(value[0].value)}
           />
         </S.ModalCol>
 
@@ -67,9 +65,8 @@ const ModalCourses = ({ showModal, toggleModal }) => {
             <Checkbox
               label={<>Presencial</>}
               name={"checkbox"}
-              value={{ a: 2, b: [1, 2] }}
               onChange={(data) => {
-                console.log(data);
+                setInputIsPresential(!data.isChecked);
               }}
             />
           </div>
@@ -77,9 +74,8 @@ const ModalCourses = ({ showModal, toggleModal }) => {
             <Checkbox
               label={<>A distância</>}
               name={"checkbox"}
-              value={{ a: 2, b: [1, 2] }}
               onChange={(data) => {
-                console.log(data);
+                setInputIsDistance(!data.isChecked);
               }}
             />
           </div>
@@ -89,9 +85,9 @@ const ModalCourses = ({ showModal, toggleModal }) => {
             SELECIONE O CURSO DE SUA PREFERÊNCIA
           </Text>
           <Range
-            value={1}
+            value={1000}
             onChange={(data) => {
-              console.log(data);
+              setInputAmount(data);
             }}
           />
         </S.ModalCol>
@@ -101,41 +97,40 @@ const ModalCourses = ({ showModal, toggleModal }) => {
           </Text>
         </S.ModalCol>
         <S.ModalCol>
-          <SortCourse />
+          <SortCourse onChange={(data) => setInputSort(data)} />
         </S.ModalCol>
-        <div style={{ width: "100%" }}>
-          {dbjson.map((course, index) => (
+
+        <S.List>
+          {listCourse.map((course, index) => (
             <article key={index}>
               <S.ListDivided />
               <Checkbox
                 label={
-                  <>
-                    <S.List>
-                      <S.ListImage>
-                        <img
-                          src={course.university.logo_url}
-                          alt={course.university.name}
-                        />
-                      </S.ListImage>
-                      <S.ListWrapperText>
-                        <div>
-                          <Text color={"bluePrimary"} bold>
-                            {course.course.name}
-                          </Text>
-                          <Text bold>{course.course.level}</Text>
-                        </div>
-                        <S.ListTextDescription>
-                          <Text inline bold>
-                            Bolsa de
-                          </Text>{" "}
-                          <Text inline bold color={"green"}>
-                            {course.discount_percentage}%
-                          </Text>
-                          <Text bold>{course.price_with_discount}</Text>
-                        </S.ListTextDescription>
-                      </S.ListWrapperText>
-                    </S.List>
-                  </>
+                  <S.ListItem>
+                    <S.ListImage>
+                      <img
+                        src={course.university.logo_url}
+                        alt={course.university.name}
+                      />
+                    </S.ListImage>
+                    <S.ListWrapperText>
+                      <div>
+                        <Text color={"bluePrimary"} bold>
+                          {course.course.name}
+                        </Text>
+                        <Text bold>{course.course.level}</Text>
+                      </div>
+                      <S.ListTextDescription>
+                        <Text inline bold>
+                          Bolsa de
+                        </Text>{" "}
+                        <Text inline bold color={"green"}>
+                          {course.discount_percentage}%
+                        </Text>
+                        <Text bold>{course.price_with_discount}</Text>
+                      </S.ListTextDescription>
+                    </S.ListWrapperText>
+                  </S.ListItem>
                 }
                 name={"checkbox"}
                 value={{ a: 2, b: [1, 2] }}
@@ -146,7 +141,7 @@ const ModalCourses = ({ showModal, toggleModal }) => {
               <S.ListDivided />
             </article>
           ))}
-        </div>
+        </S.List>
       </S.CustomModal>
     </>
   );

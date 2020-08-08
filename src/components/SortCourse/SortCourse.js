@@ -11,7 +11,7 @@ const SortCourse = ({ onChange }) => {
     DESC: "desc",
   };
 
-  const [currentSort, setCurrentSort] = useState(SORT_TYPE.DESC);
+  const [currentSort, setCurrentSort] = useState(SORT_TYPE.ASC);
   const onChangeCallback = useCallback(onChange);
 
   const sortOnChange = () => {
@@ -32,9 +32,9 @@ const SortCourse = ({ onChange }) => {
           Nome da Faculdade
         </Text>
         {currentSort == SORT_TYPE.DESC ? (
-          <Icon.ArrowDownward />
-        ) : (
           <Icon.ArrowUpward />
+        ) : (
+          <Icon.ArrowDownward />
         )}
       </div>
     </S.SortCourse>
