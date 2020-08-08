@@ -20,7 +20,7 @@ const ModalForm = ({ showModal }) => {
 
   useEffect(() => {
     if (!showModal) clearAll();
-  }, [showModal]);
+  }, [showModal, clearAll]);
 
   return (
     <>
