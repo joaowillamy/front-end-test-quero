@@ -46,11 +46,11 @@ const FavoriteCourse = ({ favoriteCourse }) => {
           Mensalidade com o Quero Bolsa:
         </Text>
         <Text size={"13px"} cut>
-          {favoriteCourse.full_price}
+          R$ {favoriteCourse.full_price}
         </Text>
         <span style={{ display: "inline", width: "100%" }}>
           <Text color={"green"} size={"18px"} bold inline>
-            {favoriteCourse.price_with_discount}
+            R$ {favoriteCourse.price_with_discount}
           </Text>
           <Text inline> /mês</Text>
         </span>

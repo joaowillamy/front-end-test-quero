@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Breadcrumb, Modal } from "@joaowillamy-test-quero/core";
 
-import { dbjson } from "../services/db";
-import { AddCourse, FavoriteCourse, Text } from "../components";
+import { dbjson } from "../../services/db";
+import {
+  AddCourse,
+  FavoriteCourse,
+  Text,
+  ModalCourses,
+} from "../../components";
 
 import * as S from "./Home.styled";
 
@@ -41,9 +46,7 @@ const Home = () => {
         ))}
       </S.ContainerList>
 
-      <Modal isOpen={showModal} toggleModal={toggleModal}>
-        oi
-      </Modal>
+      <ModalCourses showModal={showModal} toggleModal={toggleModal} />
     </>
   );
 };
