@@ -18,7 +18,12 @@ export const ModalCol = styled.div`
   `}
 `;
 
-export const List = styled.div`
+export const List = styled.section`
+  width: 100%;
+  padding: 20px;
+`;
+
+export const ListItem = styled.div`
   margin: 10px;
   width: 100%;
   display: flex;
