@@ -1,17 +1,17 @@
 import React from "react";
-import { Card, Icon } from "@joaowillamy-test-quero/core";
+import { Icon } from "@joaowillamy-test-quero/core";
 
-import { Text } from "../Text";
+import { CustomCard, Text } from "../";
 
 import * as S from "./AddCourse.styled";
 
 const AddCourse = (props) => {
   return (
-    <Card {...props}>
+    <CustomCard {...props}>
       <S.Row>
         <Icon.AddCircleOutline />
         <br />
-        <Text bold size={"18px"}>
+        <Text bold size={"18px"} space={"10px"}>
           Adicionar Bolsa
         </Text>
         <Text>
@@ -19,7 +19,7 @@ const AddCourse = (props) => {
           cursos do seu interesse
         </Text>
       </S.Row>
-    </Card>
+    </CustomCard>
   );
 };
 

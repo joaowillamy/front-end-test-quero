@@ -1,13 +1,14 @@
 import React from "react";
-import { Card, Button } from "@joaowillamy-test-quero/core";
+import { Button } from "@joaowillamy-test-quero/core";
+import { Rate } from "@joaowillamy-test-quero/form";
 
-import { Divided } from "../Divided";
-import { Text } from "../Text";
+import { Divided, Text, CustomCard } from "../";
+
 import * as S from "./FavoriteCourse.styled";
 
 const FavoriteCourse = ({ favoriteCourse }) => {
   return (
-    <Card>
+    <CustomCard>
       <img
         src={favoriteCourse.university.logo_url}
         alt={favoriteCourse.university.name}
@@ -15,10 +16,13 @@ const FavoriteCourse = ({ favoriteCourse }) => {
 
       <S.Row>
         <Text bold>{favoriteCourse.university.name}</Text>
-        <Text color={"bluePrimary"} bold>
+        <Text space={"10px"} color={"bluePrimary"} bold>
           {favoriteCourse.course.name}
         </Text>
-        <Text bold>{favoriteCourse.university.score}</Text>
+        <div>
+          <S.Score>{favoriteCourse.university.score}</S.Score>
+          <Rate value={favoriteCourse.university.score} />
+        </div>
       </S.Row>
 
       <Divided />
@@ -56,7 +60,7 @@ const FavoriteCourse = ({ favoriteCourse }) => {
         <Button variant="secondary">Excluir</Button>
         <Button>Veja mais</Button>
       </span>
-    </Card>
+    </CustomCard>
   );
 };
 
