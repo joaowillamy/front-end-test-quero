@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Breadcrumb, Modal } from "@joaowillamy-test-quero/core";
+import { Breadcrumb } from "@joaowillamy-test-quero/core";
 
-import { dbjson } from "../../services/db";
+import { useListCoursesContext } from "../../contexts";
 import {
   AddCourse,
   FavoriteCourse,
@@ -12,6 +12,8 @@ import {
 import * as S from "./Home.styled";
 
 const Home = () => {
+  const { listFavoriteCourses } = useListCoursesContext();
+
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(!showModal);
 
@@ -41,7 +43,7 @@ const Home = () => {
       <S.ContainerList>
         <AddCourse onClick={toggleModal} />
 
-        {dbjson.map((favoriteCourse, index) => (
+        {listFavoriteCourses.map((favoriteCourse, index) => (
           <FavoriteCourse key={index} favoriteCourse={favoriteCourse} />
         ))}
       </S.ContainerList>

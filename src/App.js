@@ -2,6 +2,7 @@ import React from "react";
 import { Header, Footer } from "@joaowillamy-test-quero/core";
 import { ThemeProvider } from "@joaowillamy-test-quero/theme";
 
+import { ListCoursesProvider } from "./contexts";
 import { Home } from "./pages";
 
 import * as S from "./App.styled";
@@ -15,7 +16,9 @@ const App = () => {
 
       <S.CostumMenu />
 
-      <Home />
+      <ListCoursesProvider>
+        <Home />
+      </ListCoursesProvider>
 
       <Footer />
     </ThemeProvider>

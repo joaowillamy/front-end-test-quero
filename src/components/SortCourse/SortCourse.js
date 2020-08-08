@@ -16,7 +16,7 @@ const SortCourse = ({ onChange }) => {
 
   const sortOnChange = () => {
     const newCurrentSort =
-      SORT_TYPE.DESC == currentSort ? SORT_TYPE.ASC : SORT_TYPE.DESC;
+      SORT_TYPE.DESC === currentSort ? SORT_TYPE.ASC : SORT_TYPE.DESC;
 
     setCurrentSort(newCurrentSort);
     onChangeCallback && onChangeCallback(newCurrentSort);
@@ -31,7 +31,7 @@ const SortCourse = ({ onChange }) => {
         <Text inline bold color={"bluePrimary"}>
           Nome da Faculdade
         </Text>
-        {currentSort == SORT_TYPE.DESC ? (
+        {currentSort === SORT_TYPE.DESC ? (
           <Icon.ArrowUpward />
         ) : (
           <Icon.ArrowDownward />
