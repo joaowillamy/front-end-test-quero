@@ -1,6 +1,24 @@
-# Teste de Front End of Quero Educação
+<h1 align="center">
+    <img alt="GoBarber Web" src="http://features.frontend.quero.s3-website.us-east-2.amazonaws.com/images/logo-querobolsa.svg" width="300px"/>
+    <br>
+    Test frontend of Quero Educação
+</h1>
 
-make with love <3
+<h4 align="center">
+  make with love <3
+</h4>
+<p align="center">
+  <img alt="GitHub top language" src="http://img.shields.io/github/languages/top/joaowillamy/front-end-test-quero.svg">
+  
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/joaowillamy/front-end-test-quero.svg">
+
+  <a href="https://www.codacy.com/manual/joaowillamy/front-end-test-quero?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=joaowillamy/front-end-test-quero&amp;utm_campaign=Badge_Grade">
+    <img alt="Codacy grade" src="https://app.codacy.com/project/badge/Grade/daba1a7b2bad49f092341f924034ebac">
+  </a>
+  
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/joaowillamy/front-end-test-quero.svg">
+</p>
+
 
 ## See the project working
 
