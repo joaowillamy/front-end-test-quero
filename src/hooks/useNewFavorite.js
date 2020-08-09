@@ -4,11 +4,7 @@ import _ from "lodash";
 import { useListCoursesContext } from "../contexts";
 
 export const useNewFavorite = (toggleModal) => {
-  const {
-    listCourse,
-    listFavoriteCourses,
-    setListFavoriteCourses,
-  } = useListCoursesContext();
+  const { listCourse, AddFavoriteCourse } = useListCoursesContext();
 
   const [selectedCourses, setSelectedCourses] = useState([]);
 
@@ -33,7 +29,7 @@ export const useNewFavorite = (toggleModal) => {
 
   const addNewFavoriteCourse = () => {
     toggleModal && toggleModal();
-    setListFavoriteCourses([...selectedCourses, ...listFavoriteCourses]);
+    AddFavoriteCourse(selectedCourses);
   };
 
   const isCourseSelected = (course) => _.some(selectedCourses, course);

@@ -12,7 +12,10 @@ import {
 import * as S from "./Home.styled";
 
 const Home = () => {
-  const { listFavoriteCourses } = useListCoursesContext();
+  const {
+    listFilteredFavoriteCourses,
+    filterListFavoriteCourses,
+  } = useListCoursesContext();
 
   const [showModal, setShowModal] = useState(false);
   const toggleModal = () => setShowModal(!showModal);
@@ -33,17 +36,17 @@ const Home = () => {
         <S.CostumButtonGroup
           options={[
             { label: "Todos os semestres", value: "all" },
-            { label: "2º semestre de 2019", value: "second" },
-            { label: "1º semestre de 2020", value: "first" },
+            { label: "2º semestre de 2019", value: "2019.2" },
+            { label: "1º semestre de 2020", value: "2020.1" },
           ]}
-          onChange={(option) => console.log("option", option)}
+          onChange={filterListFavoriteCourses}
         />
       </S.Container>
 
       <S.ContainerList>
         <AddCourse onClick={toggleModal} />
 
-        {listFavoriteCourses.map((favoriteCourse, index) => (
+        {listFilteredFavoriteCourses.map((favoriteCourse, index) => (
           <FavoriteCourse key={index} favoriteCourse={favoriteCourse} />
         ))}
       </S.ContainerList>

@@ -1418,10 +1418,10 @@
     react-dom "16.12.0"
     styled-components "5.0.1"
 
-"@joaowillamy-test-quero/form@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@joaowillamy-test-quero/form/-/form-1.2.2.tgz#7c6f2af2640d663b9f02a44a37d54f98297f8a94"
-  integrity sha512-asS+yM3Fwy4h7ztwj1tWnAQIvGePGKLmufPWDW/F4tBKatP4TtKELululcE4FL1nVJOrmA/besxeB7YoOAihDg==
+"@joaowillamy-test-quero/form@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@joaowillamy-test-quero/form/-/form-1.2.3.tgz#7e7f3ab74a8923f6a9202a164a75e311ed1f52c8"
+  integrity sha512-nnhLkBd5fgLQUOHKimhyoGVTzlPgRWqIb4L5Ay+P6pa0Mho1HvoYFlCOYmKB+aze/NK/hwB6tERWjsNtn8S7+w==
   dependencies:
     prop-types "15.7.2"
     react "16.12.0"
