@@ -1418,20 +1418,20 @@
     react-dom "16.12.0"
     styled-components "5.0.1"
 
-"@joaowillamy-test-quero/form@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@joaowillamy-test-quero/form/-/form-1.2.1.tgz#83b56855c55bfdde22f4f60d4cef77740dd02d9d"
-  integrity sha512-QPl1oJI5vrIRWQdthL98sifK5uY6EJyeeoMzAzA82mX0pB9G6N913LY8FWocmmGiG61s0xPCPHptZN2eTiKT1g==
+"@joaowillamy-test-quero/form@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@joaowillamy-test-quero/form/-/form-1.2.2.tgz#7c6f2af2640d663b9f02a44a37d54f98297f8a94"
+  integrity sha512-asS+yM3Fwy4h7ztwj1tWnAQIvGePGKLmufPWDW/F4tBKatP4TtKELululcE4FL1nVJOrmA/besxeB7YoOAihDg==
   dependencies:
     prop-types "15.7.2"
     react "16.12.0"
     react-dom "16.12.0"
     styled-components "5.0.1"
 
-"@joaowillamy-test-quero/theme@^1.0.13":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@joaowillamy-test-quero/theme/-/theme-1.0.13.tgz#ed6937e0bcd57a526b326417337cc678850b5eb9"
-  integrity sha512-W8WWSGweOsq3vF+Rmn4a2Pmo29Y9MHdcLQg/6qOlogXSGdjresWM3KDxTvRi5oFgsgOtAJA58PqXWvaAUP6wIw==
+"@joaowillamy-test-quero/theme@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@joaowillamy-test-quero/theme/-/theme-1.0.14.tgz#5dd48296e2fab287c9878270605100fcaa91e337"
+  integrity sha512-xINuWhw5FxWujyG1zyqm3LaSveBOWp3d64yQlTfsZz3D8J6ApkWJDTZx7UtAzcrV7D0iq+kC9y65vAsK8Cmc0A==
   dependencies:
     prop-types "15.7.2"
     react "16.12.0"
@@ -7102,7 +7102,7 @@ lodash.uniq@^4.5.0:
 
 lodash@^4.17.19:
   version "4.17.19"
-  resolved "http://ec2-52-72-203-39.compute-1.amazonaws.com:4873/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 loglevel@^1.6.6:

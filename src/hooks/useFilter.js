@@ -13,7 +13,7 @@ export const useFilter = () => {
   const [inputCourse, setInputCourse] = useState();
   const [inputIsPresential, setInputIsPresential] = useState();
   const [inputIsDistance, setInputIsDistance] = useState();
-  const [inputAmount, setInputAmount] = useState(1000);
+  const [inputAmount, setInputAmount] = useState(10000);
   const [inputSort, setInputSort] = useState("asc");
   const [listCourse, setListCourse] = useState([]);
 
@@ -48,7 +48,6 @@ export const useFilter = () => {
     inputIsDistance,
     inputAmount,
     inputSort,
-    filter,
   ]);
 
   const clearAll = () => {
@@ -56,7 +55,7 @@ export const useFilter = () => {
     setInputCourse(null);
     setInputIsPresential(null);
     setInputIsDistance(null);
-    setInputAmount(1000);
+    setInputAmount(10000);
     setInputSort("asc");
   };
 

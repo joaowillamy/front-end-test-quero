@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Select, Checkbox, Range } from "@joaowillamy-test-quero/form";
 
 import { Text, SortCourse } from "..";
@@ -7,7 +7,7 @@ import { useListCoursesContext } from "../../contexts";
 
 import * as S from "./ModalForm.styled";
 
-const ModalForm = ({ showModal }) => {
+const ModalForm = () => {
   const {
     setInputCity,
     setInputCourse,
@@ -15,12 +15,7 @@ const ModalForm = ({ showModal }) => {
     setInputIsDistance,
     setInputAmount,
     setInputSort,
-    clearAll,
   } = useListCoursesContext();
-
-  useEffect(() => {
-    if (!showModal) clearAll();
-  }, [showModal, clearAll]);
 
   return (
     <>
@@ -57,7 +52,7 @@ const ModalForm = ({ showModal }) => {
             label={<>Presencial</>}
             name={"checkbox"}
             onChange={(data) => {
-              setInputIsPresential(!data.isChecked);
+              setInputIsPresential(data.isChecked);
             }}
           />
         </div>
@@ -66,7 +61,7 @@ const ModalForm = ({ showModal }) => {
             label={<>A distância</>}
             name={"checkbox"}
             onChange={(data) => {
-              setInputIsDistance(!data.isChecked);
+              setInputIsDistance(data.isChecked);
             }}
           />
         </div>
@@ -76,7 +71,8 @@ const ModalForm = ({ showModal }) => {
           SELECIONE O CURSO DE SUA PREFERÊNCIA
         </Text>
         <Range
-          value={1000}
+          value={10000}
+          maxRange={10000}
           onChange={(data) => {
             setInputAmount(data);
           }}

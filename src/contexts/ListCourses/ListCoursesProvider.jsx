@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 
 import ListCoursesContext from "./ListCoursesContext";
 import { useFilter } from "../../hooks/useFilter";
@@ -11,10 +12,18 @@ const ListCoursesProvider = ({ children }) => {
     []
   );
 
+  const removeFavorite = (selectedCourses) => {
+    const newListSelectedCourse = _.remove(listFavoriteCourses, (course) => {
+      return !_.isEqual(course, selectedCourses);
+    });
+    setListFavoriteCourses(newListSelectedCourse);
+  };
+
   const value = {
     ...filters,
     listFavoriteCourses,
     setListFavoriteCourses,
+    removeFavorite,
   };
 
   return (
