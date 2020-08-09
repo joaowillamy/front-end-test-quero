@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "aws s3 cp build s3://features.frontend.quero/ --recursive",
-    "test": "react-scripts test --env=jsdom --watchAll=false",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.{js,json,md,yml}\""
   },
