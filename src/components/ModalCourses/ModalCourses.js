@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import ModalForm from "../ModalForm/ModalForm";
 import ModalListCourses from "../ModalListCourses/ModalCourses";
 import { Text } from "..";
+import { useListCoursesContext } from "../../contexts";
 
 import * as S from "./ModalCourses.styled";
 
 const ModalCourses = ({ showModal, toggleModal }) => {
+  const { clearAll: clearAllFilters } = useListCoursesContext();
+
+  useEffect(() => {
+    if (!showModal) clearAllFilters();
+  }, [showModal, clearAllFilters]);
+
   return (
     <>
       <S.CustomModal isOpen={showModal} toggleModal={toggleModal}>
@@ -18,9 +25,9 @@ const ModalCourses = ({ showModal, toggleModal }) => {
         </S.ModalCol>
         <br />
 
-        <ModalForm showModal={showModal} />
+        <ModalForm />
 
-        <ModalListCourses />
+        <ModalListCourses toggleModal={toggleModal} />
       </S.CustomModal>
     </>
   );

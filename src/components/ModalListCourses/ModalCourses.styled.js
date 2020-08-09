@@ -86,3 +86,16 @@ export const ListDivided = styled.div`
     border-bottom: 2px solid rgb(204, 204, 204);
   }
 `;
+
+export const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  ${media.greaterThan("medium")`  
+    padding: 10px;
+    margin-top: 10px;
+    justify-content: flex-end;
+  `}
+`;

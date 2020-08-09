@@ -3,10 +3,14 @@ import { Button } from "@joaowillamy-test-quero/core";
 import { Rate } from "@joaowillamy-test-quero/form";
 
 import { Divided, Text, CustomCard } from "../";
+import { useListCoursesContext } from "../../contexts";
+import { currency } from "../../utils/format";
 
 import * as S from "./FavoriteCourse.styled";
 
 const FavoriteCourse = ({ favoriteCourse }) => {
+  const { removeFavorite } = useListCoursesContext();
+
   return (
     <CustomCard>
       <img
@@ -46,19 +50,28 @@ const FavoriteCourse = ({ favoriteCourse }) => {
           Mensalidade com o Quero Bolsa:
         </Text>
         <Text size={"13px"} cut>
-          R$ {favoriteCourse.full_price}
+          {currency(favoriteCourse.full_price)}
         </Text>
         <span style={{ display: "inline", width: "100%" }}>
           <Text color={"green"} size={"18px"} bold inline>
-            R$ {favoriteCourse.price_with_discount}
+            {currency(favoriteCourse.price_with_discount)}
           </Text>
           <Text inline> /mês</Text>
         </span>
       </S.Row>
 
       <span style={{ display: "inline", width: "100%" }}>
-        <Button variant="secondary">Excluir</Button>
-        <Button>Veja mais</Button>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            removeFavorite(favoriteCourse);
+          }}
+        >
+          Excluir
+        </Button>
+        <Button disabled={!favoriteCourse.enabled}>
+          {favoriteCourse.enabled ? "Veja mais" : "Indisponível"}
+        </Button>
       </span>
     </CustomCard>
   );

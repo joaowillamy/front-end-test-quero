@@ -1,19 +1,27 @@
 import React from "react";
 import { Checkbox } from "@joaowillamy-test-quero/form";
+import { Button } from "@joaowillamy-test-quero/core";
 
+import { useNewFavorite } from "../../hooks/useNewFavorite";
+import { currency } from "../../utils/format";
 import { Text } from "..";
-import { useListCoursesContext } from "../../contexts";
 
 import * as S from "./ModalCourses.styled";
 
-const ModalCourses = () => {
-  const { listCourse } = useListCoursesContext();
+const ModalCourses = ({ toggleModal }) => {
+  const {
+    listCourse,
+    selectedCourses,
+    changeSelectCourse,
+    addNewFavoriteCourse,
+    isCourseSelected,
+  } = useNewFavorite(toggleModal);
 
   return (
     <>
       <S.List>
-        {listCourse.map((course, index) => (
-          <article key={index}>
+        {listCourse.map((course) => (
+          <article key={JSON.stringify(course)}>
             <S.ListDivided />
             <Checkbox
               label={
@@ -38,21 +46,32 @@ const ModalCourses = () => {
                       <Text inline bold color={"green"}>
                         {course.discount_percentage}%
                       </Text>
-                      <Text bold>R$ {course.price_with_discount}</Text>
+                      <Text bold> {currency(course.price_with_discount)}</Text>
                     </S.ListTextDescription>
                   </S.ListWrapperText>
                 </S.ListItem>
               }
+              isSelected={isCourseSelected(course)}
               name={"checkbox"}
-              value={{ a: 2, b: [1, 2] }}
-              onChange={(data) => {
-                console.log(data);
-              }}
+              value={course}
+              onChange={changeSelectCourse}
             />
             <S.ListDivided />
           </article>
         ))}
       </S.List>
+
+      <S.Actions>
+        <Button variant="secondary" onClick={toggleModal}>
+          Cancelar
+        </Button>
+        <Button
+          disabled={!selectedCourses.length}
+          onClick={addNewFavoriteCourse}
+        >
+          Adicionar bolsa(s)
+        </Button>
+      </S.Actions>
     </>
   );
 };
