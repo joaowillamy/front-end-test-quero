@@ -2,9 +2,14 @@
 
 make with love <3
 
+## See the project working
+
+- 🚀 [[LIVE] - Features](http://features.frontend.quero.s3-website.us-east-2.amazonaws.com/)
+- 📝 [[DOCUMENTATION] - Design system](http://designsystem.frontend.quero.s3-website.us-east-2.amazonaws.com/?path=/docs/core-button--primary)
+
 ## Important!!!
 
-this project was divided into 2 repositories, one for the design system (where the UI components were) and another for the implementation of the page with the features.
+this project was divided into 2 repositories, one for the design system and another for the implementation of the page with the features.
 
 - 💄 [[REPO 1] Design system](https://github.com/joaowillamy/react-storybook-jest-lerna)
   - 🔧 [[NPM] @joaowillamy-test-quero/core](https://www.npmjs.com/package/@joaowillamy-test-quero/core)
@@ -28,4 +33,5 @@ this project was divided into 2 repositories, one for the design system (where t
 - `yarn install` - This install dependencies.
 - `yarn start` - This starts Storybook for viewing all the components locally.
 - `yarn build` This build project to production.
+- `yarn deploy` This send to S3 of AWS.
 - `yarn test` This run unit test.
