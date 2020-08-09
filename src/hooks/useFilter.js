@@ -6,6 +6,7 @@ import {
   policyCity,
   policyCourse,
   policyHowStudy,
+  policyNotRepeatCourse,
 } from "../services/policy";
 
 export const useFilter = () => {
@@ -31,7 +32,8 @@ export const useFilter = () => {
           policyCity(course, inputCity) &&
           policyCourse(course, inputCourse) &&
           policyHowStudy(course, inputIsPresential, inputIsDistance) &&
-          policyAmount(course, inputAmount)
+          policyAmount(course, inputAmount) &&
+          policyNotRepeatCourse(course)
         );
       })
       .sort((courseA, courseB) => policySort(courseA, courseB, inputSort));
@@ -67,6 +69,7 @@ export const useFilter = () => {
     setInputAmount,
     setInputSort,
     clearAll,
+    filter,
     listCourse,
   };
 };

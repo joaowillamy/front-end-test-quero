@@ -8,11 +8,12 @@ import { useListCoursesContext } from "../../contexts";
 import * as S from "./ModalCourses.styled";
 
 const ModalCourses = ({ showModal, toggleModal }) => {
-  const { clearAll: clearAllFilters } = useListCoursesContext();
+  const { clearAll: clearAllFilters, filter } = useListCoursesContext();
 
   useEffect(() => {
     if (!showModal) clearAllFilters();
-  }, [showModal, clearAllFilters]);
+    filter();
+  }, [showModal]);
 
   return (
     <>

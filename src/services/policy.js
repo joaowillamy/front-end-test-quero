@@ -1,3 +1,6 @@
+import _ from "lodash";
+import { getStorageValue } from "../utils/storage";
+
 export const policyCity = (course, inputCity) => {
   if (!inputCity) return true;
   return course.campus.city === inputCity;
@@ -41,4 +44,8 @@ export const policySort = (courseA, courseB, inputSort) => {
     if (courseA.university.name < courseB.university.name) return 1;
     return 0;
   }
+};
+
+export const policyNotRepeatCourse = (course) => {
+  return _.isEmpty(_.find(getStorageValue("@List/favoriteCourses"), course));
 };

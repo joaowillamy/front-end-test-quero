@@ -3,27 +3,15 @@ import _ from "lodash";
 
 import ListCoursesContext from "./ListCoursesContext";
 import { useFilter } from "../../hooks/useFilter";
-import { usePersistedState } from "../../hooks/usePersistedState";
+import { useFavoriteCourses } from "../../hooks/useFavoriteCourses";
 
 const ListCoursesProvider = ({ children }) => {
   const filters = useFilter();
-  const [listFavoriteCourses, setListFavoriteCourses] = usePersistedState(
-    "@List/favoriteCourses",
-    []
-  );
-
-  const removeFavorite = (selectedCourses) => {
-    const newListSelectedCourse = _.remove(listFavoriteCourses, (course) => {
-      return !_.isEqual(course, selectedCourses);
-    });
-    setListFavoriteCourses(newListSelectedCourse);
-  };
+  const favoriteCourses = useFavoriteCourses();
 
   const value = {
     ...filters,
-    listFavoriteCourses,
-    setListFavoriteCourses,
-    removeFavorite,
+    ...favoriteCourses,
   };
 
   return (
