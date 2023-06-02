@@ -19,12 +19,6 @@
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/joaowillamy/front-end-test-quero.svg">
 </p>
 
-
-## See the project working
-
-- 🚀 [[LIVE] - Features](http://features.frontend.quero.s3-website.us-east-2.amazonaws.com/)
-- 📝 [[DOCUMENTATION] - Design system](http://designsystem.frontend.quero.s3-website.us-east-2.amazonaws.com/?path=/docs/core-button--primary)
-
 ## Important!!!
 
 this project was divided into 2 repositories, one for the design system and another for the implementation of the page with the features.
